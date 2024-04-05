@@ -7,6 +7,7 @@ import '../model/product_model.dart';
 
 class ApiService {
   var dio = Dio();
+  //untuk get product list secara online
   Future<List<Product>?> getProducts() async {
     try {
       var url = 'https://dummyjson.com/products?limit=10';
@@ -22,6 +23,7 @@ class ApiService {
     }
   }
 
+  //untuk get product list secara offline, siapkan file json nya
   Future<List<Product>?> getProductsOffline() async {
     try {
       var result = await _parseFileToJson('assets/product.json');

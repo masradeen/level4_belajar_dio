@@ -48,7 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 5),
             FutureBuilder<List<Product>?>(
-                future: ApiService().getProductsOffline(),
+                // future: ApiService().getProducts(), //get data online
+                future: ApiService().getProductsOffline(), //get data offline
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     List<Product> listProducts = snapshot.data!;
